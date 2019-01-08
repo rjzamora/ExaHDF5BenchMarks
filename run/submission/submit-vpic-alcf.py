@@ -7,6 +7,9 @@
 import subprocess
 import argparse
 import os
+import sys
+if sys.version_info[0] < 3:
+    raise Exception("Must be using Python 3")
 
 # Machine Specific
 machine   = "theta"
