@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #COBALT -A CSC250STDM10
-#COBALT -n 128
-#COBALT -t 45
+##COBALT -n 128
+##COBALT -t 30
 
 # Load python modules
 import subprocess
@@ -20,7 +20,6 @@ ppn       = 32
 
 # Important Benchmarking Settings
 benchname = "vpic-hdf5-devlop-20190107"
-ccio      = False
 runroot   = fsroot + "/benchscratch"
 benchroot = srcroot + "/ExaHDF5BenchMarks"
 outroot   = benchroot + "/run/results/" + benchname

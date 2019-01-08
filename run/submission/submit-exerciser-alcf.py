@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #COBALT -A CSC250STDM10
-#COBALT -n 128
-#COBALT -t 45
+##COBALT -n 128
+##COBALT -t 30
 
 # Load python modules
 import subprocess
@@ -47,11 +47,11 @@ use_ccio  = args.ccio
 cb_mult   = 1
 cb_div    = 1
 rshift    = True
-dim       = 1
-dimranks  = None
-minb      = 4096
+dim       = 2
+dimranks  = [ 32, 32 ]
+minb      = 1024
 bmult     = 4
-nsizes    = 3
+nsizes    = 1
 lfs_count = 52           # Number of Stripes in LUSTRE (Number of Aggs in CCIO)
 lfs_size  = 16           # Size of Stripes in LUSTRE (Size of Aggs in CCIO)
 nodes     = 1            # Ignored if machine is "vesta" or "theta"
