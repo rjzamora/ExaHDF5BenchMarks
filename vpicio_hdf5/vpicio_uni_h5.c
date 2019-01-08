@@ -47,7 +47,7 @@
 struct timeval start_time[3];
 float elapse[3];
 
-#define USE_COLLECTIVE
+//#define USE_COLLECTIVE
 
 // HDF5 specific declerations
 herr_t ierr;
