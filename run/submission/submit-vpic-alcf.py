@@ -163,7 +163,8 @@ with open(outdir+"/results."+jobid, "a") as outf:
         envs = [ ]
         cmd = list( get_runjob_cmd( envs, "ind" ) ); print(cmd)
         subprocess.call(cmd, stdout=outf)
-
+        subprocess.call(["rm","-f","testfile"], stdout=outf)
+        
     for itrial in range(ntrials):
         # COLLECTIVE
         subprocess.call(["echo",""], stdout=outf)
@@ -171,6 +172,7 @@ with open(outdir+"/results."+jobid, "a") as outf:
         envs = [ ]
         cmd = list( get_runjob_cmd( envs, "col" ) ); print(cmd)
         subprocess.call(cmd, stdout=outf)
+        subprocess.call(["rm","-f","testfile"], stdout=outf)
 
 # ---------------------------------------------------------------------------- #
 #  Done.
