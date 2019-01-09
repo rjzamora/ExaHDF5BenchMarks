@@ -13,7 +13,8 @@ print("Using Python version: "+str(sys.version_info[0]))
 # Machine Specific
 machine   = "theta"
 srcroot   = "/home/zamora/hdf5_root_dir"
-fsroot    = "/projects/CSC250STDM10/rzamora"
+#fsroot    = "/projects/CSC250STDM10/rzamora"
+fsroot    = "/projects/datascience/rzamora"
 ppn       = 32
 #machine   = "other"
 #srcroot   = "/Users/rzamora/IO"

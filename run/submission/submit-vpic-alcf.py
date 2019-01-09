@@ -13,7 +13,8 @@ print("Using Python version: "+str(sys.version_info[0]))
 # Machine Specific
 machine   = "theta"
 srcroot   = "/home/zamora/hdf5_root_dir"
-fsroot    = "/projects/CSC250STDM10/rzamora"
+#fsroot    = "/projects/CSC250STDM10/rzamora"
+fsroot    = "/projects/datascience/rzamora"
 ppn       = 32
 #machine   = "other"
 #srcroot   = "/Users/rzamora/IO"
@@ -164,7 +165,7 @@ with open(outdir+"/results."+jobid, "a") as outf:
         cmd = list( get_runjob_cmd( envs, "ind" ) ); print(cmd)
         subprocess.call(cmd, stdout=outf)
         subprocess.call(["rm","-f","testfile"], stdout=outf)
-        
+
     for itrial in range(ntrials):
         # COLLECTIVE
         subprocess.call(["echo",""], stdout=outf)
