@@ -8,8 +8,7 @@ import subprocess
 import argparse
 import os
 import sys
-if sys.version_info[0] < 3:
-    raise Exception("Must be using Python 3")
+print("Using Python version: "+str(sys.version_info[0]))
 
 # Machine Specific
 machine   = "theta"
@@ -27,21 +26,21 @@ ccio      = False
 runroot   = fsroot + "/benchscratch"
 benchroot = srcroot + "/ExaHDF5BenchMarks"
 outroot   = benchroot + "/run/results/" + benchname
-exec      = benchroot + "/exerciser/hdf5Exerciser"
+execname  = benchroot + "/exerciser/hdf5Exerciser"
 
 # Parse command line inputs
 parser = argparse.ArgumentParser()
 parser.add_argument("--machine", dest="machine", default=machine,
                     help="system name -- Available: theta, vesta, other [default="+machine+"]")
-parser.add_argument("--exec", dest="exec", default=exec,
-                    help="Path to Exerciser executable [default="+exec+"]")
+parser.add_argument("--execname", dest="execname", default=execname,
+                    help="Path to Exerciser executable [default="+execname+"]")
 parser.add_argument("--ppn", dest="ppn", type=int, default=ppn,
                     help="Processes to use per node [default="+str(ppn)+"]")
 parser.add_argument("--ccio", dest="ccio", action="store_true", default=ccio,
                     help="Using the CCIO version of HDF5 (Set CCIO Env Vars) [default="+str(ccio)+"]")
 args = parser.parse_args()
 machine   = args.machine
-execname  = args.exec
+execname  = args.execname
 ppn       = args.ppn
 use_ccio  = args.ccio
 

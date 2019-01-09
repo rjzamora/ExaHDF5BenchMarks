@@ -8,8 +8,7 @@ import subprocess
 import argparse
 import os
 import sys
-if sys.version_info[0] < 3:
-    raise Exception("Must be using Python 3")
+print("Using Python version: "+str(sys.version_info[0]))
 
 # Machine Specific
 machine   = "theta"
@@ -26,21 +25,21 @@ benchname = "vpic-hdf5-devlop-20190107"
 runroot   = fsroot + "/benchscratch"
 benchroot = srcroot + "/ExaHDF5BenchMarks"
 outroot   = benchroot + "/run/results/" + benchname
-exec      = benchroot + "/vpicio_hdf5/bin/vpicio_uni_h5_"
+execname  = benchroot + "/vpicio_hdf5/bin/vpicio_uni_h5_"
 
 # Parse command line inputs
 parser = argparse.ArgumentParser()
 parser.add_argument("--machine", dest="machine", default=machine,
                     help="system name -- Available: theta, vesta, other [default="+machine+"]")
-parser.add_argument("--exec", dest="exec", default=exec,
-                    help="Path to Exerciser executable [default="+exec+"]")
+parser.add_argument("--execname", dest="execname", default=execname,
+                    help="Path to Exerciser executable [default="+execname+"]")
 parser.add_argument("--ppn", dest="ppn", type=int, default=ppn,
                     help="Processes to use per node [default="+str(ppn)+"]")
 parser.add_argument("--ntrials", dest="ntrials", type=int, default=10,
                     help="Number of trials for both Ind and Col [default=10]")
 args = parser.parse_args()
 machine   = args.machine
-execname  = args.exec
+execname  = args.execname
 ppn       = args.ppn
 ntrials   = args.ntrials
 
